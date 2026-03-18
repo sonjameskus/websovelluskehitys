@@ -1,0 +1,74 @@
+.row {
+  display: flex;
+  margin: 10%;
+}
+
+.column {
+  flex: 100%;
+  margin-left: 15%;
+  margin-right: 15%;
+  align-items: center;
+  height: 100%;
+  font-family: 'Bookman Old Style';
+}
+
+.nav {
+  overflow: hidden;
+  background-color: #5922c2;
+}
+
+.nav a {
+  float: left;
+  display: block;
+  color: #c0aaea;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-family: 'Bookman Old Style';
+}
+
+.nav a:last-of-type {
+  float: right;
+}
+
+.nav a:hover {
+  background-color: #c0aaea;
+  color: #5922c2;
+}
+
+body {
+  background-color: #c0aaea;
+}
+
+h1 {
+  color: #5922c2;
+  font-family: 'Bookman Old Style';
+}
+h3 {
+  color: #5922c2;
+  font-family: 'Bookman Old Style';
+}
+
+a {
+  color: #5922c2;
+  font-family: 'Bookman Old Style';
+  text-decoration: none;
+}
+
+a:hover {
+  background-color: #5922c2;
+  color: #c0aaea;
+}
+
+p {
+  color: #5922c2;
+  font-family: 'Bookman Old Style';
+}
+
+table {
+  color: #5922c2;
+  font-family: 'Bookman Old Style';
+  text-align: center;
+}
+
+
