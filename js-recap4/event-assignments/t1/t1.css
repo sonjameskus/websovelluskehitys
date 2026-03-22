@@ -1,0 +1,68 @@
+body {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  width: 20rem;
+}
+
+li {
+  border: 1px solid #000;
+  line-height: 2rem;
+   position: relative;
+  text-align: center;
+  padding: 10px 50px;
+}
+
+li input {
+  position: absolute;
+  left: 1px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+li button {
+  position: absolute;
+  right: 1px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+label {
+  display: block;
+  width: 100%;
+  padding-left: 1rem;
+}
+
+li button {
+  width: 4rem;
+  height: 3rem;
+  background-color: rgb(255, 0, 0);
+  color: #fff;
+  border: none;
+  cursor: pointer;
+}
+
+li input {
+  position: absolute;
+  cursor: pointer;
+}
+
+li input[type='checkbox']:checked + label {
+  background-color: rgb(146, 208, 136);
+  font-weight: bold;
+  align-self: center;
+}
+
+.add-btn {
+  margin: 1rem;
+  padding: 0.5rem 1rem;
+  background-color: rgb(80, 80, 168);
+  color: #fff;
+  border: none;
+  cursor: pointer;
+}
+
