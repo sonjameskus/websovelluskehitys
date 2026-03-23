@@ -783,7 +783,7 @@ for (const restaurant of restaurants) {
     console.log('klikattiin', restaurant.name);
     const info = document.querySelector('dialog');
     info.innerText = '';
-    const nimi = document.createElement('p');
+    const nimi = document.createElement('h3');
     nimi.innerText = restaurant.name;
     const osoite = document.createElement('p');
     osoite.innerText = restaurant.address;
