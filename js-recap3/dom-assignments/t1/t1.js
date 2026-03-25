@@ -1,3 +1,5 @@
+'use strict';
+
 // array for todo list
 const todoList = [
   {
@@ -28,3 +30,25 @@ const todoList = [
 ];
 
 // add your code here
+
+const ul = document.querySelector('ul');
+
+const addToDoItem = item => {
+  const list = `
+    <li>
+      <input type="checkbox" ${item.completed && 'checked'} id="${item.id}"/>
+      <label for="todo-${item.id}">${item.task}</label>
+    </li>
+  `;
+  ul.insertAdjacentHTML('beforeend', list);
+
+  const lastLi = ul.lastElementChild;
+  lastLi.querySelector('input').addEventListener('click', event => {
+    item.completed = !item.completed;
+    console.log(todoList);
+  });
+};
+for (const item of todoList) {
+  addToDoItem(item);
+  console.log(todoList);
+}

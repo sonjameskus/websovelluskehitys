@@ -771,3 +771,36 @@ const restaurants = [
 ];
 
 // your code here
+
+function success(pos) {
+  const crd = pos.coords;
+
+  const map = L.map('map').setView([crd.latitude, crd.longitude], 13);
+  L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    attribution:
+      '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
+  }).addTo(map);
+
+  restaurants.forEach(restaurant => {
+  const coords = restaurant.location.coordinates;
+
+  const marker = L.marker([coords[1], coords[0]]).addTo(map);
+
+  marker.bindPopup(`
+    <h3>${restaurant.name}</h3>
+    <p>${restaurant.address}</p>
+    <p>${restaurant.postalCode} ${restaurant.city}</p>
+  `);
+});
+}
+function error(err) {
+  console.warn(`ERROR(${err.code}): ${err.message}`);
+}
+
+const options = {
+  enableHighAccuracy: true,
+  timeout: 5000,
+  maximumAge: 0,
+};
+
+navigator.geolocation.getCurrentPosition(success, error, options);

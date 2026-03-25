@@ -1,3 +1,5 @@
+'use strict';
+
 const restaurants = [
   {
     location: {type: 'Point', coordinates: [25.018456, 60.228982]},
@@ -771,3 +773,62 @@ const restaurants = [
 ];
 
 // your code here
+
+function geoFindMe() {
+  const status = document.querySelector('#status');
+  const mapLink = document.querySelector('#map-link');
+
+  mapLink.href = '';
+  mapLink.textContent = '';
+
+  function success(position) {
+    const latitude = position.coords.latitude;
+    const longitude = position.coords.longitude;
+
+    for (const restaurant of restaurants) {
+      const rLat = restaurant.location.coordinates[1];
+      const rLon = restaurant.location.coordinates[0];
+
+      restaurant.distance = distance(latitude, longitude, rLat, rLon);
+    }
+
+    restaurants.sort((a, b) => a.distance - b.distance);
+
+    sortedRestaurants();
+
+    status.textContent = '';
+  }
+
+  function error() {
+    status.textContent = 'Unable to retrieve your location';
+  }
+
+  if (!navigator.geolocation) {
+    status.textContent = 'Geolocation is not supported by your browser';
+  } else {
+    status.textContent = 'Locating…';
+    navigator.geolocation.getCurrentPosition(success, error);
+  }
+}
+
+document.querySelector('#find-me').addEventListener('click', geoFindMe);
+
+function distance(lat1, lon1, lat2, lon2) {
+  return Math.sqrt((lat2 - lat1) ** 2 + (lon2 - lon1) ** 2);
+}
+
+function sortedRestaurants() {
+  const table = document.querySelector('table');
+  table.innerHTML = '';
+  for (const restaurant of restaurants) {
+    const rivi = document.createElement('tr');
+    const nimiSolu = document.createElement('td');
+    const osoiteSolu = document.createElement('td');
+
+    nimiSolu.innerText = restaurant.name;
+    osoiteSolu.innerText = restaurant.address;
+
+    rivi.append(nimiSolu, osoiteSolu);
+    table.append(rivi);
+  }
+}

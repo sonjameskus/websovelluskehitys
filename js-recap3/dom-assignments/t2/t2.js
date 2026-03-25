@@ -28,3 +28,35 @@ const todoList = [
 ];
 
 // add your code here
+const ul = document.querySelector('ul');
+
+const toDoList = item => {
+  const li = document.createElement('li');
+
+  const input = document.createElement('input');
+  input.type = 'checkbox';
+  input.id = item.id;
+
+  if (item.completed) {
+    input.checked = true;
+  }
+  const label = document.createElement('label');
+  label.htmlFor = item.id;
+  label.textContent = item.task;
+
+  li.appendChild(input);
+  li.appendChild(label);
+
+  ul.appendChild(li);
+
+  input.addEventListener('click', () => {
+    item.completed = !item.completed;
+    console.log(todoList);
+  });
+
+  const index = todoList.findIndex(({id}) => id === item.id);
+};
+
+for (const item of todoList) {
+  toDoList(item);
+}
