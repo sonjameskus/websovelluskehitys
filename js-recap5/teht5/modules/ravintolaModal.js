@@ -31,9 +31,8 @@ const ravintolaModal = (restaurant, menu) => {
     yritys
   );
 
-  const menuContainer = document.createElement('div');
-  menuContainer.innerHTML = teeMenuHTML(menu.courses || []);
-  container.append(menuContainer);
+  const menuElement = teeMenuHTML(menu.courses || []);
+  container.append(menuElement);
 
   return container;
 };

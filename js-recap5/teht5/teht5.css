@@ -45,3 +45,8 @@ button:hover {
   background-color: #ccc;
   color: #000;
 }
+
+#filter {
+  background-color: #000;
+  color: #ccc;
+}

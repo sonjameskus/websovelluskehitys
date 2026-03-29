@@ -1,17 +1,26 @@
-const teeMenuHTML = (courses) => {
-  let html = '';
+const teeMenuHTML = (courses = []) => {
+  const container = document.createElement('div');
+
   for (const course of courses) {
     const {name, price, diets} = course;
-    html += `
-    <article class="course">
-    <hr>
-      <p><strong>${name || 'Ei ilmoitettu'}</strong></p>
-      <p>Hinta: ${price ?? 'Ei ilmoitettu'}</p>
-      <p>Allergeenit: ${diets ?? 'Ei ilmoitettu'}</p>
-    </article>
-    `;
+
+    const article = document.createElement('article');
+    article.classList.add('course');
+
+    const nimi = document.createElement('p');
+    nimi.innerHTML = `<hr> <strong>${name || 'Ei ilmoitettu'}</strong>`;
+
+    const hinta = document.createElement('p');
+    hinta.innerText = `Hinta: ${price ? price : 'Ei ilmoitettu'}`;
+
+    const allergeenit = document.createElement('p');
+    allergeenit.innerText = `Allergeenit: ${diets ? diets : 'Ei tietoa'}`;
+
+    article.append(nimi, hinta, allergeenit);
+    container.append(article);
   }
-  return html;
+
+  return container;
 };
 
 export default teeMenuHTML;
