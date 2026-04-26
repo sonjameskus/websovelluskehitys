@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="main.css" />
+    <script src="colortheme.js" defer></script>
+    <script src="user.js" type="module" defer></script>
+    <title>Userpage</title>
+  </head>
+  <body>
+    <div class="row">
+      <div class="banner"><h1>Opiskelijaravintolat</h1></div>
+      <div class="navipalkki">
+        <a href="main.html">Etusivu</a> <button id="themeToggle"></button
+        ><a href="userpage.html">Omat sivut </a>
+      </div>
+      <div class="column">
+      <div id="loginView">
+  <h2>Kirjaudu</h2>
+  <input id="loginUser" placeholder="username">
+  <br>
+  <input id="loginPass" type="password" placeholder="password">
+  <br>
+
+  <button id="loginBtn">Kirjaudu sisään</button>
+
+  <p>
+    Eikö sinulla ole käyttäjää?
+    <a href="userpage.html" id="showRegister">Rekisteröidy!</a>
+  </p>
+</div>
+
+
+<div id="registerView" style="display:none;">
+  <h2>Rekisteröidy</h2>
+  <input id="regUser" placeholder="username">
+  <br>
+  <input id="regPass" type="password" placeholder="password">
+  <br>
+  <input id="regPassConfirm" type="password" placeholder="confirm password">
+  <br>
+  <input id="regEmail" type="email" placeholder="email">
+  <br>
+
+  <button id="registerBtn">Registeröidy</button>
+
+  <p>
+    <a href="#" id="showLogin">Kirjaudu</a>
+  </p>
+</div>
+
+
+<div id="loggedInView" style="display:none;">
+  <h1>Omat tiedot</h1>
+  <hr>
+  <p><strong>Käyttäjätunnus:</strong> <span id="usernameDisplay"></span></p>
+  <button id="changeUserNameBtn">Vaihda käyttäjätunnus</button>
+  <p><strong>Sähköposti:</strong> <span id="emailDisplay"></span></p>
+  <button id="changeEmailBtn">Vaihda sähköposti</button>
+  <hr>
+
+  <h3>Suosikkiravintola:</h3>
+  <ul id="favoritesList">
+    <!-- suosikkiravintolat listataan tähän -->
+  </ul>
+
+  <hr>
+  <button id="logoutBtn">Logout</button>
+
+</div>
+      </div>
+    </div>
+  </body>
+</html>

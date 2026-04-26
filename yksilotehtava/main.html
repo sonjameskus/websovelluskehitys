@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="main.css" />
+    <script src="colortheme.js" defer></script>
+    <script src="main.js" type="module" defer></script>
+    <title>Main</title>
+  </head>
+  <body>
+    <div class="row">
+      <div class="banner"><h1>Opiskelijaravintolat</h1></div>
+      <div class="navipalkki">
+        <a href="main.html">Etusivu</a> <button id="themeToggle"></button
+        ><a href="userpage.html">Omat sivut </a>
+      </div>
+      <div class="column">
+        <h1>Ravintolat</h1>
+        <p>Hae ravintolaa sijaintisi perusteella:</p>
+
+        <button id="haku-btn">Hae</button><br />
+        <p id="status"></p>
+        <a id="map-link" href="" target="_blank"></a>
+        <button id="menuToggle"></button>
+        <select id="cityFilter">
+          <option value="all"></option>
+        </select>
+
+        <table id="target">
+          <tr>
+            <th>Nimi</th>
+            <th>Osoite</th>
+            <th>Kaupunki</th>
+          </tr>
+          <!-- add restaurants here -->
+        </table>
+        <!-- modal -->
+        <dialog>
+          <!-- add restaurant info here when restaurant is clicked -->
+        </dialog>
+      </div>
+    </div>
+  </body>
+</html>
