@@ -24,7 +24,6 @@ function showLoggedIn() {
   loginView.style.display = 'none';
   registerView.style.display = 'none';
   loggedInView.style.display = 'block';
-  console.log('User is logged in');
 }
 
 document.querySelector('#showRegister').addEventListener('click', (e) => {
